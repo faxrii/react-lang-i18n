@@ -1,0 +1,34 @@
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+
+
+// Importing translation files
+import translationAZ from "./locales/az/translation.json";
+import translationEN from "./locales/en/translation.json";
+
+
+
+//Creating object with the variables of imported translation files
+const resources = {
+  az: {
+    translation: translationAZ,
+  },
+  en: {
+    translation: translationEN,
+  },
+};
+
+//i18N Initialization
+
+i18n
+  .use(initReactI18next)
+  .init({
+    resources,
+    lng:"az", //default language
+    keySeparator: false,
+    interpolation: {
+      escapeValue: false,
+    },
+  });
+
+export default i18n;
